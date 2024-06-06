@@ -20,11 +20,12 @@ const config = {
     extend: {
       colors: {
         accent: "#1c1a17",
-        primary: "#e8e1cf",
+        primary: "#fff",
+        secondary: "#fddc5c"
       },
       fontFamily: {
         quicksand: ["Satoshi", "sans-serif"],
-        britney: ["Britney", "sans-serif"],
+        britney: ["Gambarino", "sans-serif"],
       },
       keyframes: {
         "accordion-down": {

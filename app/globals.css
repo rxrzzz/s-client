@@ -1,4 +1,4 @@
-@import url("https://api.fontshare.com/v2/css?f[]=britney@400,700,1000&f[]=satoshi@300,400,500,700,900&display=swap");
+@import url("https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,700,900&f[]=gambarino@400&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -10,11 +10,31 @@
 }
 
 body {
-  background-color: #e8e1cf;
+  background-color: #fff;
 }
 
 .shadow-surreal {
   box-shadow: 0px 0px 0px 1px #0e3f7e08, 0px 1px 1px -0.5px #2a334508,
     0px 3px 3px -1.5px #2a334608, 0px 6px 6px -3px #2a334608,
     0px 12px 12px -6px #0e3f7e08, 0px 24px 24px -12px #0e3f7e10;
+}
+
+.rdp-button_reset[aria-selected="true"],
+.rdp-button_reset:hover {
+  background-color: #fddc5c !important;
+  color: black !important;
+  
+  border-radius: 0;
+}
+
+.rdp-head th{
+  font-size: 15px;
+  font-weight: bold;
+}
+#react-day-picker-2{
+  font-size: 25px;
+}
+.rdp-button_reset{
+  font-size: 20px;
+  font-weight: bold;
 }
