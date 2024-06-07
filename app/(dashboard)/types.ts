@@ -12,15 +12,13 @@ export type Room = {
   typeId: number;
   status: "available" | "pending" | "booked";
   noOfTimesBooked: number;
-  createdAt: string;
-  roomType: {
-    name: string;
-    price: number;
-    id: number;
-  };
+  name: string;
+  price: string;
 };
 
 export type GetRoomResponse = {
   rooms: Room[];
+  noOfRooms: number;
+  maxPageNo: number;
   isSuccess: boolean;
 };

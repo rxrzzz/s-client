@@ -17,18 +17,34 @@ export const getBookings = () => {
     bookingsAreLoading,
   };
 };
+export type RoomSearch = {
+  key: keyof Room;
+  value: number | string;
+}[];
 
-export const getRooms = () => {
+export type GetRoomProps = {
+  limit: number;
+  pageNo: number;
+  orderBy: keyof Room;
+  searchBy?: RoomSearch;
+  ascOrDesc: "asc" | "desc";
+};
+
+export const getRooms = ({ ...body }: Partial<GetRoomProps>) => {
   const fetcher = (url: string): Promise<GetRoomResponse> => {
-    return api.get(url);
+    return api.get(url, {
+      params: body,
+  });
   };
-  const { data: rooms, isLoading: roomsAreLoading } = useSWR(
-    "/rooms/listRooms",
-    fetcher
-  );
+  const {
+    data: rooms,
+    isLoading: roomsAreLoading,
+    mutate: refetchRooms,
+  } = useSWR("/rooms/listRooms", fetcher);
   return {
     rooms,
     roomsAreLoading,
+    refetchRooms,
   };
 };
 

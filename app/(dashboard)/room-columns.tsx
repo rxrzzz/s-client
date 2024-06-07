@@ -29,14 +29,14 @@ export const room_columns: ColumnDef<Room>[] = [
     accessorKey: "roomName",
     header: () => <p className="text-base text-accent font-bold">Room Type</p>,
     accessorFn: (room) => {
-      return room.roomType.name;
+      return room.name;
     },
   },
   {
     accessorKey: "roomPrice",
     header: () => <p className="text-base text-accent font-bold">Room Price</p>,
     accessorFn: (room) => {
-      return room.roomType.price;
+      return room.price;
     },
     cell: ({ row }) => {
       return <>${row.getValue("roomPrice")}</>;
